@@ -14,7 +14,7 @@ code {
 
 
 /* Style The Dropdown Button */
-.dropbtn {
+/* .dropbtn {
    
     background-color: #91e694;
     color: white;
@@ -22,9 +22,9 @@ code {
     font-size: 16px;
     border: none;
     cursor: pointer;
-  }
+  } */
   
-  select
+  /* select
   {
     
     text-decoration: none;
@@ -33,25 +33,25 @@ code {
     border: none;
     box-shadow: none;
     
-  }
+  } */
 
   /* The container <div> - needed to position the dropdown content */
-  .dropdown {
+  /* .dropdown {
     position: relative;
     display: inline-block;
-  }
+  } */
   
   /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
+  /* .dropdown-content {
     display: none;
     position: absolute;
     background-color: #91e694;
     color: black;
     min-width: 160px;
-    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     box-shadow: none;
     z-index: 1;
-  }
+  } */
   
   /* Links inside the dropdown */
   /* .dropdown-content a {
@@ -71,16 +71,24 @@ code {
 }
    */
   /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
+  /* .dropdown:hover .dropdown-content {
     display: block;
     background-color: #91e694;
     
     
-  }
+  } */
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   /* .dropdown:hover .dropbtn {
     background-color: #f3f3f3;
    
   } */
+
+  .main-dro
+  {
+      background-color: rgb(129, 225, 129);
+      color: white;
+      padding: 0.75rem;
+      line-height: 1.5;
+  }
 

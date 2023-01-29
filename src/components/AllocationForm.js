@@ -9,8 +9,32 @@ const AllocationForm = (props) => {
     const [cost, setCost] = useState('');
     const [action, setAction] = useState('');
 
+
+    const costChange = e => {
+        const { value } = e.target;
+        const keyValue = String.fromCharCode(value);
+        if (!(new RegExp("[0-9]").test(keyValue)))
+        {
+            alert("the cost value shoul be only number");
+            setCost("");
+        }
+        else
+        {
+            setCost({
+                cost: keyValue
+            });
+        }
+        
+      };
+
     const submitEvent = () => {
 
+        
+              if(cost > remaining) {
+                alert("The value cannot exceed remaining funds  £"+remaining);
+                setCost("");
+                return;
+            }
             if(cost > remaining) {
                 alert("The value cannot exceed remaining funds  £"+remaining);
                 setCost("");
@@ -62,11 +86,11 @@ const AllocationForm = (props) => {
 
                     <input
                         required='required'
-                        type='number'
+                        type='text'
                         id='cost'
                         value={cost}
                         style={{ marginLeft: '2rem' , size: 10}}
-                        onChange={(event) => setCost(event.target.value)}>
+                        onChange={costChange}>
                         </input>
 
                     <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>

@@ -22,22 +22,26 @@ const Currency = () => {
       };
 
     return (
-        <div className="dropdown">
+        <div className="alert alert-success" style={{ color: 'white', backgroundColor : '#7ceb7c' }}>
          
-         <lebel class="dropbtn">
-             Currency :
-             <select  value={currencyType} onChange={handleChange}>
+              <div className="form-group row">
+              <lebel className="col-sm-3 col-form-label col-form-label-sm">Currency</lebel>
+              <div class="col-sm-7">
+              <select style={{ color: 'white', backgroundColor : '#7ceb7c', border:'none' }}  value={currencyType} onChange={handleChange}>
+                {options.map((option) => (
 
-              {options.map((option) => (
+                    <option style={{ color: 'black',margin :'30' }} value={option.value}>{option.name}</option>
+                    ))}
 
-              <option className="dropdown-content"  value={option.value}>{option.name}</option>
-              
+                </select>
+              </div>
+             
+              </div>
 
-))}
 
-        </select>
 
-        </lebel>
+      
+
       
       
         </div>
