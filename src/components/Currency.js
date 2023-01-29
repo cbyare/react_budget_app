@@ -2,7 +2,7 @@ import { AppContext } from '../context/AppContext';
 import React, { useContext, useState } from 'react';
 
 const Currency = () => {
-    // const { budget } = useContext(AppContext);
+     const {dispatch, currency } = useContext(AppContext);
     const options = [
 
         { name: '$ Dollar', value: '$' },
@@ -12,12 +12,34 @@ const Currency = () => {
       ];
 
 
-    const [currencyType, setCurrencyType] = useState('');
+const myStyle = {
+   select:{
+    color: 'white',
+    backgroundColor:'#7ceb7c',
+    border:'none',
+  
+   },
+    optionStyle:
+    {
+        color: 'black',
+        'option :nthChild(1n+4):hover' : 
+        {
+            backgroundColor:'white',
+        },
+        
+    },
+};
 
 
     const handleChange = (event) => {
 
-        setCurrencyType(event.target.value);
+        // setCurrencyType(event.target.value);
+        const cur = event.target.value;
+
+        dispatch({
+            type: 'CHG_CURRENCY',
+            payload: cur,
+        });
      
       };
 
@@ -26,11 +48,11 @@ const Currency = () => {
          
               <div className="form-group row">
               <lebel className="col-sm-3 col-form-label col-form-label-sm">Currency</lebel>
-              <div class="col-sm-7">
-              <select style={{ color: 'white', backgroundColor : '#7ceb7c', border:'none' }}  value={currencyType} onChange={handleChange}>
+              <div class="col-sm-6">
+              <select style={myStyle.select}  value={currency} onChange={handleChange}>
                 {options.map((option) => (
 
-                    <option style={{ color: 'black',margin :'30' }} value={option.value}>{option.name}</option>
+                    <option style={myStyle.optionStyle} value={option.value}>{option.name}</option>
                     ))}
 
                 </select>
