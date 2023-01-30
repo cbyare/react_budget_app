@@ -12,6 +12,7 @@ const AllocationForm = (props) => {
 
     const costChange = e => {
         const { value } = e.target;
+        console.log(value);
         const keyValue = String.fromCharCode(value);
         if (!(new RegExp("[0-9]").test(keyValue)))
         {
