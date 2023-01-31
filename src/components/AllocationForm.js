@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const AllocationForm = (props) => {
-    const { dispatch,remaining  } = useContext(AppContext);
+    const { dispatch,remaining,currency  } = useContext(AppContext);
 
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
@@ -11,20 +11,27 @@ const AllocationForm = (props) => {
 
 
     const costChange = e => {
-        const { value } = e.target;
-        console.log(value);
-        const keyValue = String.fromCharCode(value);
-        if (!(new RegExp("[0-9]").test(keyValue)))
-        {
-            alert("the cost value shoul be only number");
+        // const { value } = e.target.value;
+        setCost(e.target.value.replace(/\D/g,''))
+
+        if(cost > remaining) {
+            alert("The value cannot exceed remaining funds " + currency  +remaining);
             setCost("");
+            return;
         }
-        else
-        {
-            setCost({
-                cost: keyValue
-            });
-        }
+        //  console.log(value);
+        // const keyValue = String.fromCharCode(value);
+        // if (!(new RegExp("[/^[0-9\b]+$/-9]").test(keyValue)))
+        // {
+        //     alert("the cost value shoul be only number");
+        //     setCost("");
+        // }
+        // else
+        // {
+        //     setCost({
+        //         cost: keyValue
+        //     });
+        // }
         
       };
 
@@ -84,7 +91,8 @@ const AllocationForm = (props) => {
                         <option defaultValue value="Add" name="Add">Add</option>
                 <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
-
+                      
+                      <span  style={{paddingLeft:24}}>{currency}</span>
                     <input
                         required='required'
                         type='text'
