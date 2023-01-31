@@ -46,7 +46,7 @@ const Currency = () => {
     
     const handleChange = (event) => {
      const  value  = event.target.value;
-    setCurrencyType({event}) // fix here
+    setCurrencyType(event.target) // fix here
        console.log(currencyType);
         dispatch({
             type: 'CHG_CURRENCY',
@@ -71,7 +71,7 @@ const Currency = () => {
               <div className="form-group row">
               <lebel className="col-sm-3 col-form-label col-form-label-sm">Currency</lebel>
               <div class="col-sm-6">
-              <select style={myStyle.select}  value={currencyType} onChange={handleChange}>
+              <select style={myStyle.select}  onChange={handleChange}>
                 {options.map((option) => (
 
                     <option style={myStyle.optionStyle} value={option.value}>{option.name}</option>

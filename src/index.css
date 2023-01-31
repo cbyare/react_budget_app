@@ -34,19 +34,19 @@ code {
 .btn-danger
 {
     
-    background-color: #f51e2c !important;
-    border-color: #f51e2c !important;   
+    background-color: #ed4752 !important;
+    border-color: #ed4752 !important;   
    
 }
 
 .btn-danger:hover
 {
-    background-color: #f51e2c !important;
-    border-color: #f51e2c !important;
+    background-color: #ed4752 !important;
+    border-color: #ed4752 !important;
 }
 .btn-danger:active{
-    background-color: #f51e2c !important;
-    border-color: #f51e2c !important;
+    background-color: #ed4752 !important;
+    border-color: #ed4752 !important;
 }
 
 

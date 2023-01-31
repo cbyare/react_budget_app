@@ -19,19 +19,7 @@ const AllocationForm = (props) => {
             setCost("");
             return;
         }
-        //  console.log(value);
-        // const keyValue = String.fromCharCode(value);
-        // if (!(new RegExp("[/^[0-9\b]+$/-9]").test(keyValue)))
-        // {
-        //     alert("the cost value shoul be only number");
-        //     setCost("");
-        // }
-        // else
-        // {
-        //     setCost({
-        //         cost: keyValue
-        //     });
-        // }
+   
         
       };
 
